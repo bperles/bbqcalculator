@@ -1,0 +1,35 @@
+.container{
+  display: grid;
+  background-color: aliceblue;
+  align-items: center;
+  max-width: 18.75rem;
+  max-height: 21rem;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 0.5rem;
+  padding:1.25rem;
+  margin: auto;
+
+}
+
+h1{
+  font-size: 150%;
+  padding: 1rem;
+  text-align: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+.input{
+
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.315rem;
+  margin-bottom: 0.625rem;
+
+}
+
+button{
+width: 5rem;
+}
+
