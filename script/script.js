@@ -1,14 +1,38 @@
-// Carne - 400 gr por pessoa   + de 6 horas - 650
-// Cerveja - 1200 ml por Pessoa + 6 horas - 2000 ml
-// Refrigerante/agua - 1000 ml por pessoa + 6 horas 1500ml
-
-// Crianças valem por 0,5
+// Child are the same as 0.5 person
 
 let inputAdults = document.getElementById("adults");
 let inputKids = document.getElementById("kids");
 let inputHours = document.getElementById("hours");
 
 let result = document.getElementById("result");
+
+onload = function(){
+  if(sessionStorage.getItem("runBefore") === null){
+  sessionStorage.clear();
+  sessionStorage.setItem("meatInit",400);
+  sessionStorage.setItem("beerInit",1200);
+  sessionStorage.setItem("sodaInit",1000);
+  sessionStorage.setItem("meatLast",650);
+  sessionStorage.setItem("beerLast",2000);
+  sessionStorage.setItem("sodaLast",1500);
+  sessionStorage.setItem("runBefore",true);
+  }
+}
+
+meatInit = sessionStorage.getItem("meatInit");
+beerInit = sessionStorage.getItem("beerInit");
+sodaInit = sessionStorage.getItem("sodaInit");
+meatLast = sessionStorage.getItem("meatLast");
+beerLast = sessionStorage.getItem("beerLast");
+sodaLast = sessionStorage.getItem("sodaLast");
+
+document.getElementById("meatInit").value = sessionStorage.getItem("meatInit");
+document.getElementById("beerInit").value = sessionStorage.getItem("beerInit");
+document.getElementById("sodaInit").value = sessionStorage.getItem("sodaInit");
+document.getElementById("meatLast").value = sessionStorage.getItem("meatLast");
+document.getElementById("beerLast").value = sessionStorage.getItem("beerLast");
+document.getElementById("sodaLast").value = sessionStorage.getItem("sodaLast");
+
 
 function calc()
 {
@@ -30,30 +54,45 @@ function calc()
 
 function meatPP(hours){
 if (hours>=6){
-  return 650;
+  return meatLast;
 }
 else{
-  return 400;
+  return meatInit;
 }
-
 }
 
 function beerPP(){
   if (hours>=6){
-    return 2000;
+    return beerLast;
   }
   else{
-    return 1200;
+    return beerInit;
   }
   }
 
 function sodaPP(){
   if (hours>=6){
-    return 1500;
+    return sodaLast;
   }
   else{
-    return 1000;
+    return sodaInit;
   }
 }
 
+function settings(){
 
+  sessionStorage.setItem("meatInit",document.getElementById("meatInit").value);
+  sessionStorage.setItem("beerInit",document.getElementById("beerInit").value);
+  sessionStorage.setItem("sodaInit",document.getElementById("sodaInit").value);
+  sessionStorage.setItem("meatLast",document.getElementById("meatLast").value);
+  sessionStorage.setItem("beerLast",document.getElementById("beerLast").value);
+  sessionStorage.setItem("sodaLast",document.getElementById("sodaLast").value);
+
+  meatInit = sessionStorage.getItem("meatInit");
+  beerInit = sessionStorage.getItem("beerInit");
+  sodaInit = sessionStorage.getItem("sodaInit");
+  meatLast = sessionStorage.getItem("meatLast");
+  beerLast = sessionStorage.getItem("beerLast");
+  sodaLast = sessionStorage.getItem("sodaLast");
+
+  }

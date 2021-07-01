@@ -3,7 +3,7 @@
   background-color: aliceblue;
   align-items: center;
   max-width: 18.75rem;
-  max-height: 21rem;
+  height: auto;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 0.5rem;
   padding:1.25rem;
@@ -31,5 +31,18 @@ h1{
 
 button{
 width: 5rem;
+}
+
+a{
+  display: box;
+  text-decoration: none;
+  text-align: end;
+  font-size: 0.8rem;
+}
+
+.settings-title{
+  margin: 0;
+  margin-top: 0.4rem;
+  font-style: italic;
 }
 
