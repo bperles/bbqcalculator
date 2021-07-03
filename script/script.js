@@ -49,7 +49,6 @@ function calc() {
   if (isNaN(kids)) {
     kids = 0
   }
-  console.log(kids)
 
   let hours = inputHours.value
 
